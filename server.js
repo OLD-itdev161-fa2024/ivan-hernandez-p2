@@ -8,11 +8,11 @@ const app = express();
 connectDatabase();
 
 
-app.use(express.json({ extended: false}));
+app.use(express.json({ extended: false }));
 
-//API endpoints
+// API endpoints
 /**
- * @route GET /
+ * @route Get /
  * @desc Test endpoint
  */
 app.get('/', (req, res) =>
