@@ -6,15 +6,15 @@ const db = config.get('mongoURI');
 
 
 const connectDatabase = async () => {
-    try {
+    
+    try{
         await mongoose.connect(db, {
             useUnifiedTopology: true
         });
         console.log('Connected to MongoDB');
-    } catch (error) {
+    }catch (error){
         console.error(error.message);
-
-    
+//exit with failure code
         process.exit(1);
     }
 };

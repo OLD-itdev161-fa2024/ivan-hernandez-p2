@@ -1,15 +1,22 @@
-import express from 'express';
+import express, { Router } from 'express';
 import connectDatabase from './config/db';
 import {check, validationResult} from 'express-validator';
+
+
 
 
 const app = express();
 
 
+
+
 connectDatabase();
 
 
+
+
 app.use(express.json({ extended: false }));
+
 
 // API endpoints
 /**
@@ -19,6 +26,7 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) =>
     res.send('http get request sent to root api endpoint')
 );
+
 
 /**
  * @route POST api/users
@@ -45,6 +53,8 @@ app.post (
         }
     }
 );
+
+
 
 
 app.listen(3000, () => console.log(`Express server running on port 3000`));
